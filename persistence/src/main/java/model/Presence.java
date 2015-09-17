@@ -61,4 +61,6 @@ public class Presence {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    
 }
