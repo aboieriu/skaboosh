@@ -11,5 +11,12 @@
 
     <artifactId>impl</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>skaboosh</groupId>
+            <artifactId>persistence</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

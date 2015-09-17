@@ -1,5 +1,9 @@
 package facade;
 
+import model.User;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: User
@@ -8,4 +12,6 @@ package facade;
  * To change this template use File | Settings | File Templates.
  */
 public interface IUserFacade {
+
+    public List<User> getAllUsers(Long id);
 }
