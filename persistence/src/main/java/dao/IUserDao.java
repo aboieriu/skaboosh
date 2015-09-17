@@ -1,5 +1,9 @@
 package dao;
 
+import model.User;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: User
@@ -8,4 +12,5 @@ package dao;
  * To change this template use File | Settings | File Templates.
  */
 public interface IUserDao {
+    public List<User> getAllUsers(Long id);
 }
