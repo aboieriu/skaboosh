@@ -24,6 +24,6 @@ public class UserDao implements IUserDao {
     }
 
     public List<User> getAllUsers(Long id) {
-        return this.entityManager.createQuery("from Article").getResultList();;
+        return this.entityManager.createQuery("from Article").getResultList();
     }
 }
