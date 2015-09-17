@@ -19,7 +19,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/group")
 public class GroupService {
-<<<<<<< Updated upstream
+
      @Autowired
     private IGroupFacade groupFacade;
 
@@ -27,33 +27,33 @@ public class GroupService {
     @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
     public List<Group> getAllGroup(){
-        return this.groupFacade.getAll();
+        return this.groupFacade.getAllGroup();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Group getGroup(@PathVariable("id") Long id){
-        return this.groupFacade.get(id);
+        return this.groupFacade.getGroup(id);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     @ResponseBody
-    public void saveGroup(@RequestBody Group group) {
-        this.groupFacade.save(group);
+    public void addGroup(@RequestBody Group group) {
+        this.groupFacade.addGroup(group);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseBody
-    public void updateGroup(@PathVariable("id") Long id,@PathVariable("EndDate")Date EndDate, @RequestBody Group group) {
+    public void updateGroup(@PathVariable("id") Long id, @RequestBody Group group) {
         group.setId(id);
-        group.setEndDate(EndDate);
-        this.groupFacade.update(group);
+
+        this.groupFacade.updateGroup(group);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteGroup(@PathVariable("id") Long id) {
-        this.groupFacade.remove(id);
+        this.groupFacade.deleteGroup(id);
     }
 
     public IGroupFacade getGroupFacade() {
@@ -67,8 +67,7 @@ public class GroupService {
 
 
 
-=======
->>>>>>> Stashed changes
+
 
 
 }
