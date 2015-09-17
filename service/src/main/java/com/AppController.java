@@ -7,6 +7,6 @@ package com;
  * Time: 11:35
  * To change this template use File | Settings | File Templates.
  */
-public class Test {
+public class AppController {
 
 }
