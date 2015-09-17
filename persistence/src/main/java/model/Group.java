@@ -15,10 +15,14 @@ package model;
 @Entity
 @Table(name="group")
 public class Group {
+<<<<<<< e87502dc463b24fd84fe7ec4b8aaefe1225e5b4d
     @Id
+=======
+
+>>>>>>> c16daab68b89aa02fe66684ef53921f14807ff0d
     @GeneratedValue(generator="idIncrementor")
     @GenericGenerator(name="idIncrementor" , strategy="increment")
-
+    @Id
     private Long id;
     @Column(name="name")
     private String name;
