@@ -18,7 +18,6 @@ import java.util.List;
   public class GroupDao implements IGroupDao {
 
     private EntityManager entityManager ;
-
     @PersistenceContext
     private void setEntityManager(EntityManager entityManager){
         this.entityManager=entityManager;
@@ -29,7 +28,7 @@ import java.util.List;
         return this.entityManager.createQuery("from Group").getResultList();
     }
 
-    public void getGroup(Long id){
+    public Group getGroup(Long id){
         if (id == null) {
             return null;
         } else {

@@ -12,10 +12,10 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface IGroupDao {
-    public void getGroup();
-    public  List<Group> getAllGroup();
-    public Group getGroup(Long id);
-    public void addGroup(Group group);
-    public  void updateGroup(Group group);
-    public void deleteGroup(Long id);
+
+     List<Group> getAllGroup();
+     Group getGroup(Long id);
+     void addGroup(Group group);
+     void updateGroup(Group group);
+     void deleteGroup(Long id);
 }
