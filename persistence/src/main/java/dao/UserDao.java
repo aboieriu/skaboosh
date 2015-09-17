@@ -7,5 +7,5 @@ package dao;
  * Time: 11:46
  * To change this template use File | Settings | File Templates.
  */
-public class UserDao {
+public class UserDao implements IUserDao{
 }

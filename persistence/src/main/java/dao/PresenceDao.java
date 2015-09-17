@@ -7,5 +7,5 @@ package dao;
  * Time: 11:47
  * To change this template use File | Settings | File Templates.
  */
-public class PresenceDao {
+public class PresenceDao implements IPresenceDao {
 }

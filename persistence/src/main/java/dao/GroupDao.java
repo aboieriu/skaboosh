@@ -7,7 +7,7 @@ package dao;
  * Time: 11:46
  * To change this template use File | Settings | File Templates.
  */
-public class GroupDao {
+public class GroupDao implements IGroupDao {
     public void getGroup(){
         
     }

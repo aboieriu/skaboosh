@@ -15,7 +15,7 @@ package model;
 @Entity
 @Table(name="group")
 public class Group {
-    @Id()
+    @Id
     @GeneratedValue(generator="idIncrementor")
     @GenericGenerator(name="idIncrementor" , strategy="increment")
 
