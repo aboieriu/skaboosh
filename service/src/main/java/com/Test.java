@@ -8,5 +8,5 @@ package com;
  * To change this template use File | Settings | File Templates.
  */
 public class Test {
-    private String Batman;
+
 }
