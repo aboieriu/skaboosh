@@ -8,4 +8,5 @@ package dao;
  * To change this template use File | Settings | File Templates.
  */
 public class UserDao implements IUserDao{
+
 }
