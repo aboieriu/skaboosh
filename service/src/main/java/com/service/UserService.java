@@ -19,13 +19,13 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@RequestMapping("/user")
+
 public class UserService {
 
     @Autowired
     IUserFacade userFacade;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/group/{groupId}/user", method = RequestMethod.GET)
     @ResponseBody
     public List<User> getAllUsers(Long id) {
 

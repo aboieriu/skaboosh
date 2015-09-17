@@ -18,7 +18,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/presence")
+
 public class PresenceService {
 
     @Autowired

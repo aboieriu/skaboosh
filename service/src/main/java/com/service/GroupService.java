@@ -17,7 +17,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @Controller
-@RequestMapping("/group")
+@RequestMapping("/api/group")
 public class GroupService {
 
      @Autowired
