@@ -14,7 +14,7 @@ import java.util.List;
 public interface IGroupFacade {
     List<Group> getAllGroup();
     Group getGroup(Long id);
-    void updateGroup(Group group);
     void addGroup(Group group);
+    void updateGroup(Group group);
     void deleteGroup(Long id);
 }

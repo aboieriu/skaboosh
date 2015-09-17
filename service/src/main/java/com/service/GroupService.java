@@ -24,33 +24,32 @@ public class GroupService {
     private IGroupFacade groupFacade;
 
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/group", method = RequestMethod.GET)
     @ResponseBody
     public List<Group> getAllGroup() {
         return this.groupFacade.getAllGroup();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/group/{groupId}", method = RequestMethod.GET)
     @ResponseBody
     public Group getGroup(@PathVariable("id") Long id) {
         return this.groupFacade.getGroup(id);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/group", method = RequestMethod.POST)
     @ResponseBody
     public void addGroup(@RequestBody Group group) {
         this.groupFacade.addGroup(group);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/group/{groupId}", method = RequestMethod.PUT)
     @ResponseBody
     public void updateGroup(@PathVariable("id") Long id, @RequestBody Group group) {
         group.setId(id);
-
         this.groupFacade.updateGroup(group);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/group/{groupId}", method = RequestMethod.DELETE)
     @ResponseBody
     public void deleteGroup(@PathVariable("id") Long id) {
         this.groupFacade.deleteGroup(id);

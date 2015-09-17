@@ -15,22 +15,24 @@ import java.util.List;
  * Time: 11:46
  * To change this template use File | Settings | File Templates.
  */
-public class GroupDao implements IGroupDao {
+  public class GroupDao implements IGroupDao {
 
     private EntityManager entityManager ;
+
     @PersistenceContext
     private void setEntityManager(EntityManager entityManager){
         this.entityManager=entityManager;
     }
+
 
     public List<Group> getAllGroup (){
         return this.entityManager.createQuery("from Group").getResultList();
     }
 
     public void getGroup(Long id){
-        if(id == null){
+        if (id == null) {
             return null;
-        } else{
+        } else {
             return entityManager.find(Group.class, id);
         }
         
@@ -44,7 +46,7 @@ public class GroupDao implements IGroupDao {
 
     @Transactional
     public void updateGroup(Group group){
-        Group groupFromDbs = this.getGroup(group.getId());
+        Group groupFromDbs = this.getGroup(group.getId();
         if (groupFromDbs != null) {
             groupFromDbs.setName(group.getName());
             groupFromDbs.setEndDate(new Date());
@@ -53,7 +55,7 @@ public class GroupDao implements IGroupDao {
     }
     @Transactional
     public void deleteGroup(Long id) {
-        Group groupFromDbs = this.getGroup(id);
+       Group groupFromDbs= this.getGroup(id);
         if (groupFromDbs != null) {
             entityManager.remove(groupFromDbs);
         }

@@ -18,22 +18,26 @@ public class GroupFacade {
 
 
     public List<Group> getAllGroup() {
-        return null;
+        return this.groupFacade.getAllGroup();
     }
 
     public Group getGroup(Long id) {
-        return null;
-    }
-
-    public void updateGroup(Group group) {
-
+        return this.groupFacade.getGroup(id)  ;
     }
 
     public void addGroup(Group group) {
+         this.groupFacade.addGroup(group);
+
+    }
+    public void updateGroup(Group group) {
+         this.groupFacade.updateGroup(group);
 
     }
 
+
+
     public void deleteGroup(Long id) {
+        this.groupFacade.deleteGroup(id);
 
     }
     public IGroupFacade getGroupFacade() {
