@@ -20,19 +20,19 @@ import java.util.List;
 @RequestMapping("/api/group")
 public class GroupService {
 
-     @Autowired
+    @Autowired
     private IGroupFacade groupFacade;
 
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     @ResponseBody
-    public List<Group> getAllGroup(){
+    public List<Group> getAllGroup() {
         return this.groupFacade.getAllGroup();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Group getGroup(@PathVariable("id") Long id){
+    public Group getGroup(@PathVariable("id") Long id) {
         return this.groupFacade.getGroup(id);
     }
 
@@ -65,9 +65,7 @@ public class GroupService {
     }
 
 
-
-
-
-
-
 }
+
+
+
