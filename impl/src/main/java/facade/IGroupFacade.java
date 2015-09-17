@@ -1,5 +1,9 @@
 package facade;
 
+import model.Group;
+
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: User
@@ -8,4 +12,9 @@ package facade;
  * To change this template use File | Settings | File Templates.
  */
 public interface IGroupFacade {
+    List<Group> getAllGroup();
+    Group getGroup(Long id);
+    void updateGroup(Group group);
+    void addGroup(Group group);
+    void deleteGroup(Long id);
 }
