@@ -12,6 +12,14 @@ public class PresenceFacade implements IPresenceFacade {
 
         private IPresenceDao presenceDao;
 
+    public IPresenceDao getPresenceDao() {
+        return presenceDao;
+    }
+
+    public void setPresenceDao(IPresenceDao presenceDao) {
+        this.presenceDao = presenceDao;
+    }
+
     public List<Presence> bringPresence() {
         return null;
     }
