@@ -1,6 +1,8 @@
 package facade;
 
+import dao.IGroupDao;
 import model.Group;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -11,41 +13,41 @@ import java.util.List;
  * Time: 11:41
  * To change this template use File | Settings | File Templates.
  */
-public class GroupFacade {
+public class GroupFacade implements IGroupFacade{
 
-
-    private IGroupFacade groupFacade;
+    @Autowired
+    private IGroupDao groupDao;
 
 
     public List<Group> getAllGroup() {
-        return this.groupFacade.getAllGroup();
+        return this.groupDao.getAllGroup();
     }
 
     public Group getGroup(Long id) {
-        return this.groupFacade.getGroup(id)  ;
+        return this.groupDao.getGroup(id)  ;
     }
 
     public void addGroup(Group group) {
-         this.groupFacade.addGroup(group);
+         this.groupDao.addGroup(group);
 
     }
     public void updateGroup(Group group) {
-         this.groupFacade.updateGroup(group);
+         this.groupDao.updateGroup(group);
 
     }
 
 
 
     public void deleteGroup(Long id) {
-        this.groupFacade.deleteGroup(id);
+        this.groupDao.deleteGroup(id);
 
     }
-    public IGroupFacade getGroupFacade() {
-        return groupFacade;
+
+    public IGroupDao getGroupDao() {
+        return groupDao;
     }
 
-    public void setGroupFacade(IGroupFacade groupFacade) {
-        this.groupFacade = groupFacade;
+    public void setGroupDao(IGroupDao groupDao) {
+        this.groupDao = groupDao;
     }
-
 }

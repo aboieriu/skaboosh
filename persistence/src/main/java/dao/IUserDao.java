@@ -13,4 +13,8 @@ import java.util.List;
  */
 public interface IUserDao {
     public List<User> getAllUsers(Long id);
+    public void addUser(User userId);
+    public void updateUser(User myUser);
+    public void deleteUser(Long groupId , Long userId);
+    public User getUser(Long groupId,Long userId);
 }

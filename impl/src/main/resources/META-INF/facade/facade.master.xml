@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-       <bean class="facade.PresenceFacade"></bean>
-       <bean class="facade.GroupFacade"></bean>
-       <bean class="facade.UserFacade"></bean>
+       <import resource="classpath:/META-INF/facade/group.facade.xml"/>
+       <import resource="classpath:/META-INF/facade/user.facade.xml"/>
+       <import resource="classpath:/META-INF/facade/presence.facade.xml"/>
 </beans>

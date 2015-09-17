@@ -14,8 +14,10 @@
           p:driverClassName="com.mysql.jdbc.Driver"
           p:url="jdbc:mysql://192.168.105.84:3306/skaboosh"
           p:username="skaboosh"
-          p:password="skaboosh"
-            />
+          p:password="skaboosh"/>
+
+
+
 
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

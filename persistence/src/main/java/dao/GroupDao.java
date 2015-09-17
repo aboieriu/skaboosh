@@ -28,6 +28,7 @@ import java.util.List;
         return this.entityManager.createQuery("from Group").getResultList();
     }
 
+    @Transactional
     public Group getGroup(Long id){
         if (id == null) {
             return null;
@@ -39,16 +40,17 @@ import java.util.List;
 
    @Transactional
     public void addGroup(Group item){
-       item.setStartDate(new Date());
+
        entityManager.persist(item);
    }
 
     @Transactional
     public void updateGroup(Group group){
-        Group groupFromDbs = this.getGroup(group.getId();
+        Group groupFromDbs = this.getGroup(group.getId());
         if (groupFromDbs != null) {
             groupFromDbs.setName(group.getName());
-            groupFromDbs.setEndDate(new Date());
+            groupFromDbs.setEndDate(group.getEndDate());
+            groupFromDbs.setStartDate(group.getStartDate());
             entityManager.persist(groupFromDbs);
         }
     }
