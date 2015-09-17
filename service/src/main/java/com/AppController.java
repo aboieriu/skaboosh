@@ -1,12 +1,15 @@
 package com;
 
-/**
- * Created with IntelliJ IDEA.
- * User: User
- * Date: 17.09.2015
- * Time: 11:35
- * To change this template use File | Settings | File Templates.
- */
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
 public class AppController {
+
+    @RequestMapping("/")
+    public String handleRequest(){
+        return "index.jsp";
+    }
+
 
 }
