@@ -15,10 +15,6 @@ package model;
 @Entity
 @Table(name="group")
 public class Group {
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     @GeneratedValue(generator="idIncrementor")
     @GenericGenerator(name="idIncrementor" , strategy="increment")
     @Id
