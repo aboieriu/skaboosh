@@ -21,4 +21,8 @@ public class UserFacade implements IUserFacade {
     public List<User> getAllUsers(Long id) {
         return this.userDao.getAllUsers(id);
     }
+
+    public void setUserDao(IUserDao userDao) {
+        this.userDao = userDao;
+    }
 }

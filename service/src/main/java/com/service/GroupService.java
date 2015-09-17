@@ -19,6 +19,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/group")
 public class GroupService {
+<<<<<<< Updated upstream
      @Autowired
     private IGroupFacade groupFacade;
 
@@ -66,6 +67,8 @@ public class GroupService {
 
 
 
+=======
+>>>>>>> Stashed changes
 
 
 }
