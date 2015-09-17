@@ -79,7 +79,7 @@ public class PresenceService {
         this.presenceFacade.updatePresence(presenceUpdate);
     }
 
-  
+
 
 
 }
