@@ -2,6 +2,7 @@ package facade;
 
 import dao.IPresenceDao;
 import model.Presence;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public class PresenceFacade implements IPresenceFacade {
 
-
+    @Autowired
     private IPresenceDao presenceDao;
 
 
