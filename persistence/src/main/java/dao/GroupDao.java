@@ -1,10 +1,12 @@
 package dao;
 
 import model.Group;
+import model.Presence;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
@@ -38,8 +40,25 @@ import java.util.List;
         
     }
 
+
+
+    public Group getGroupByDate(Date startDate,Date endDate)
+
+    {
+        Query query = this.entityManager.createQuery("from Group WHERE startDate=:startDate AND endDate=:endDate");
+        query.setParameter("startDate",startDate);
+        query.setParameter("endDate",endDate);
+        return (Group)query.getSingleResult();
+
+    }
    @Transactional
     public void addGroup(Group item){
+       Group groupFromDbs=this.getGroupByDate(item.getStartDate(),item.getEndDate())
+               if (groupFromDbs!=null)
+               {
+                   groupFromDbs.setStartDate(item.getStartDate());
+                   groupFromDbs.setEndDate(item.getEndDate());
+               }
 
        entityManager.persist(item);
    }
