@@ -25,7 +25,7 @@ import java.util.List;
 
 
     public List<Group> getAllGroup (){
-        return this.entityManager.createQuery("from student_group").getResultList();
+        return this.entityManager.createQuery("from Group").getResultList();
     }
 
     @Transactional
