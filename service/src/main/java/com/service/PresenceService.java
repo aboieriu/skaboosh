@@ -24,7 +24,7 @@ public class PresenceService {
     @Autowired
     private IPresenceFacade presenceFacade;
 
-    @DateTimeFormat
+
     @RequestMapping(value = "/api/group/{groupId}/user/{userId}/presence", method = RequestMethod.GET)
     @ResponseBody
     public List<Presence> bringPresence(@PathVariable("groupId") Long groupId,@PathVariable("userId") Long userId){
@@ -32,12 +32,12 @@ public class PresenceService {
 
     }
 
-    @DateTimeFormat
+
     @RequestMapping(value = "/api/group/{groupId}/user/{userId}/presence/{presenceId}", method = RequestMethod.GET)
     @ResponseBody
     public Presence getPresence(@PathVariable("groupId") Long groupId,@PathVariable("userId") Long userId,@PathVariable("presenceId") Long presenceId){
 
-        return this.presenceFacade.getPresence(groupId,userId,presenceId);
+        return this.presenceFacade.getPresence(groupId, userId, presenceId);
 
     }
 
@@ -52,16 +52,18 @@ public class PresenceService {
     }
 
 
-    @DateTimeFormat
+
     @RequestMapping(value = "/api/group/{groupId}/user/{userId}/presence/",method = RequestMethod.POST)
     @ResponseBody
-    public void addPresence(@RequestBody Presence newEntry){
-
+    public void addPresence(@PathVariable("groupId") Long groupId,@PathVariable("userId") Long userId,@RequestBody Presence newEntry){
+       newEntry.setUserId(userId);
+        newEntry.setGroupId(groupId);
 
         this.presenceFacade.addPresence(newEntry);
     }
 
-    @DateTimeFormat
+
+
     @RequestMapping(value = "/api/group/{groupId}/user/{userId}/presence/{presenceId}",method = RequestMethod.PUT)
     @ResponseBody
     public void updatePresence(@PathVariable("groupId") Long groupId,@PathVariable("userId") Long userId,@PathVariable("presenceId") Long presenceId, @RequestBody Presence presenceUpdate) {

@@ -33,7 +33,7 @@ public class PresenceDao implements IPresenceDao {
     public Presence getPresence(Long groupId,Long userId,Long presenceId) {
         if(groupId !=null || userId != null || presenceId !=null)
         {
-            Query query = this.entityManager.createQuery("from Presence WHERE groupId = :groupId AND userId = :userId AND presenceId = :presenceId");
+            Query query = this.entityManager.createQuery("from Presence WHERE groupId = :groupId AND userId = :userId AND id = :presenceId");
             query.setParameter("groupId" , groupId);
             query.setParameter("userId" , userId);
             query.setParameter("presenceId" , presenceId);
@@ -63,6 +63,7 @@ public class PresenceDao implements IPresenceDao {
     }
     @Transactional
     public void addPresence(Presence presence) {
+
         entityManager.persist(presence);
     }
     @Transactional

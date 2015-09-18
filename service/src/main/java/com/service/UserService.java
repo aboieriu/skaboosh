@@ -44,7 +44,8 @@ public class UserService {
 
     @RequestMapping(value="/api/group/{groupId}/user/", method= RequestMethod.POST)
     @ResponseBody
-    public void addUser(@RequestBody User userId) {
+    public void addUser(@PathVariable("groupId") Long groupId,@RequestBody User userId) {
+        userId.setGroupId(groupId);
         this.userFacade.addUser(userId);
     }
 
