@@ -40,6 +40,5 @@ public class CorsFilter implements Filter {
 
     public void init(FilterConfig arg0) throws ServletException {
         // TODO Auto-generated method stub
-
     }
 }
