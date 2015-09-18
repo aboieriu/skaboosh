@@ -13,6 +13,29 @@ public class PresenceFacade implements IPresenceFacade {
 
     private IPresenceDao presenceDao;
 
+
+    public List<Presence> bringPresence() {
+        return this.presenceDao.bringPresence();
+    }
+
+    public Presence getPresence(Long groupId,Long userId,Long presenceId) {
+        return this.presenceDao.getPresence(groupId,userId,presenceId);
+    }
+
+    public void updatePresence(Presence presence) {
+        this.presenceDao.updatePresence(presence);
+
+    }
+
+    public void addPresence(Presence presence) {
+        this.presenceDao.addPresence(presence);
+
+    }
+
+    public void deletePresence(Long groupId,Long userId,Long presenceId) {
+              this.presenceDao.deletePresence(groupId,userId,presenceId);
+
+    }
     public IPresenceDao getPresenceDao() {
         return presenceDao;
     }
@@ -21,23 +44,4 @@ public class PresenceFacade implements IPresenceFacade {
         this.presenceDao = presenceDao;
     }
 
-    public List<Presence> bringPresence() {
-        return null;
-    }
-
-    public Presence getPresence(Long id) {
-        return null;
-    }
-
-    public void updatePresence(Presence presence) {
-
-    }
-
-    public void addPresence(Presence presence) {
-
-    }
-
-    public void deletePresence(Long id) {
-
-    }
 }
