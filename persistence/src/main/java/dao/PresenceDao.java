@@ -31,11 +31,12 @@ public class PresenceDao implements IPresenceDao {
     }
 
     public Presence getPresence(Long groupId,Long userId,Long presenceId) {
-        if(groupId !=null || userId != null)
+        if(groupId !=null || userId != null || presenceId !=null)
         {
-            Query query = this.entityManager.createQuery("from Presence WHERE groupId = :groupId AND userId = :userId ");
+            Query query = this.entityManager.createQuery("from Presence WHERE groupId = :groupId AND userId = :userId AND presenceId = :presenceId");
             query.setParameter("groupId" , groupId);
             query.setParameter("userId" , userId);
+            query.setParameter("presenceId" , presenceId);
             List<Presence> result = query.getResultList();
             if (!result.isEmpty()) {
                 return result.get(0);
@@ -45,12 +46,16 @@ public class PresenceDao implements IPresenceDao {
         return null;
 
     }
+
+    public Presence getThisPresence(Long presenceId)
+    {
+        return this.entityManager.find(Presence.class,presenceId);
+    }
     @Transactional
     public void updatePresence(Presence presence) {
-        Presence presenceFromDbs= this.getPresence(presence.getId());
+        Presence presenceFromDbs = this.getThisPresence(presence.getId());
         if(presenceFromDbs !=null){
-            presenceFromDbs.setGroupId(presence.getGroupId());
-            presenceFromDbs.setUserId(presence.getUserId());
+
             presenceFromDbs.setDate(presence.getDate());
             entityManager.persist(presenceFromDbs);
         }

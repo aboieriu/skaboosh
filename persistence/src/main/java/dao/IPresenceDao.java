@@ -13,9 +13,9 @@ import java.util.List;
  */
 public interface IPresenceDao {
 
-    List<Presence> bringPresence();
-    Presence getPresence(Long id);
-    void updatePresence(Presence presence);
-    void addPresence(Presence presence);
-    void deletePresence(Long id);
+    public List<Presence> bringPresence();
+    public Presence getPresence(Long groupId,Long userId,Long presenceId);
+    public void updatePresence(Presence presence);
+    public void addPresence(Presence presence);
+    public void deletePresence(Long groupId,Long userId,Long presenceId);
 }
