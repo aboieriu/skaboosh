@@ -53,7 +53,7 @@ import java.util.List;
     }
    @Transactional
     public void addGroup(Group item){
-       Group groupFromDbs=this.getGroupByDate(item.getStartDate(),item.getEndDate())
+       Group groupFromDbs=this.getGroupByDate(item.getStartDate(),item.getEndDate());
                if (groupFromDbs!=null)
                {
                    groupFromDbs.setStartDate(item.getStartDate());
