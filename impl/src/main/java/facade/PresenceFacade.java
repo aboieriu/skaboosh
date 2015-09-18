@@ -10,7 +10,8 @@ import java.util.List;
  */
 public class PresenceFacade implements IPresenceFacade {
 
-        private IPresenceDao presenceDao;
+
+    private IPresenceDao presenceDao;
 
     public IPresenceDao getPresenceDao() {
         return presenceDao;
