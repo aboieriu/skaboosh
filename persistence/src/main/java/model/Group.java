@@ -13,7 +13,7 @@ package model;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name="group")
+@Table(name="student_group")
 public class Group {
     @GeneratedValue(generator="idIncrementor")
     @GenericGenerator(name="idIncrementor" , strategy="increment")
